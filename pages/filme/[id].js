@@ -16,7 +16,7 @@ export default function filme() {
             method: 'GET',
             headers: {
                 accept: 'application/json',
-                Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2MmU0MDE1OTFlMmU3MjhjMTczMTU0MjE2ZDRhNzY1MCIsInN1YiI6IjYyZTA2YWVhNzcwNzAwMDA1MDBjZmYxZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.N6WC_X6CUbsFfK405Vfs8JJujPhZw-NDLDDftqZSPwg'
+                Authorization: 'Bearer ' + process.env.token // seu token aqui
             }
         };
 
