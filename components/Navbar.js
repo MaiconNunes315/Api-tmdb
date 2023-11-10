@@ -1,13 +1,11 @@
-import { useEffect, useState } from "react";
+import { PesquisaContext } from "@/context/pesquisaContext";
+import { useContext, useEffect, useState } from "react";
 
 
 export default function Navbar() {
 
-    const [pesquisa, setPesquisa] = useState("");
+    const { filtro } = useContext(PesquisaContext);
 
-    useEffect(() => {
-        localStorage.setItem("pesquisa", pesquisa);
-    }, [pesquisa])
 
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -46,7 +44,7 @@ export default function Navbar() {
                             placeholder="Search"
                             aria-label="Search"
                             onChange={(e) => {
-                                setPesquisa(e.target.value)
+                                filtro(e.target.value)
                             }}
                         />
                         <button className="btn btn-outline-success" type="submit">
